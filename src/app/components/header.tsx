@@ -9,7 +9,7 @@ const header = () => {
         <div className="text-3xl font-bold flex items-center ">
           <span className="text-white">CHRISTIAN</span>
           <Image
-            src="/icons/Logo_Christian1.PNG"
+            src="/icons/Logo2.PNG"
             width={80}
             height={80}
             alt="Picture of the author"
