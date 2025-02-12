@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const header = () => {
   return (
-    <header className="bg-[#2C2D2F] text-white py-4">
+    <header className="bg-[#2C2D2F] text-white py-4 ">
       <div className="container mx-auto flex justify-evenly items-center px-6">
         <div className="text-3xl font-bold flex items-center ">
           <span className="text-white">CHRISTIAN</span>

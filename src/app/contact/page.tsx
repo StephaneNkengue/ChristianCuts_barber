@@ -6,7 +6,7 @@ export const contact = () => {
       {/* Header */}
       <div
         className="relative w-full h-64 bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('/barber-background.jpg')" }}
+        style={{ backgroundImage: "url('/image-background.jpg')" }}
       >
         <h1 className="text-5xl font-bold">CONTACT US</h1>
       </div>
