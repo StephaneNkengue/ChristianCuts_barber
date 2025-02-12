@@ -2,7 +2,7 @@ import React from "react";
 
 export default function contact() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className=" text-white">
       {/* Header */}
       <div
         className="relative w-full h-64 bg-cover bg-center flex items-center justify-center"
