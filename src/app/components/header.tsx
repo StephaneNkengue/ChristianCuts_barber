@@ -6,32 +6,34 @@ const header = () => {
   return (
     <header className="bg-[#2C2D2F] text-white py-4 ">
       <div className="container mx-auto flex justify-evenly items-center px-6">
-        <div className="text-3xl font-bold flex items-center ">
-          <span className="text-white">CHRISTIAN</span>
-          <Image
-            src="/icons/Logo2.PNG"
-            width={80}
-            height={80}
-            alt="Picture of the author"
-          />
-          <span className="text-white">CUTZ</span>
-        </div>
+        <Link href="/">
+          <div className="text-3xl font-bold flex items-center ">
+            <span className="text-white">CHRISTIAN</span>
+            <Image
+              src="/icons/Logo2.PNG"
+              width={80}
+              height={80}
+              alt="Picture of the author"
+            />
+            <span className="text-white">CUTZ</span>
+          </div>
+        </Link>
 
         <nav className="flex text-2xl mx-20 space-x-6 text-gray-400">
           <Link
-            href="#"
+            href="/"
             className="text-orange-500 transition duration-1000 ease-in-out"
           >
             Home
           </Link>
           <Link
-            href="#"
+            href="/service"
             className="hover:text-orange-500  transition duration-1000 ease-in-out"
           >
             Services
           </Link>
           <Link
-            href="#"
+            href="/contact"
             className="hover:text-orange-500  transition duration-1000 ease-in-out"
           >
             Contact

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const contact = () => {
+export default function contact() {
   return (
     <div className="bg-gray-900 text-white">
       {/* Header */}
@@ -65,4 +65,4 @@ export const contact = () => {
       </div>
     </div>
   );
-};
+}
