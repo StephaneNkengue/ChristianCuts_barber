@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function contact() {
   return (
     <div className="text-white">
-      <div className="relative h-96">
+      <div className="relative h-96 w-full">
         <Image
           src="/images/image-background.jpg"
           alt="Background"
@@ -15,6 +15,7 @@ export default function contact() {
           objectFit="cover"
           quality={100}
           priority
+          className="w-full h-full object-cover"
         />
 
         <div className="absolute inset-0 bg-black/50"></div>
