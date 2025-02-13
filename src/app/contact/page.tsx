@@ -1,63 +1,75 @@
 import React from "react";
+import { FiPhoneCall } from "react-icons/fi";
+import { CiMail } from "react-icons/ci";
+import { CiLocationOn } from "react-icons/ci";
+import Image from "next/image";
 
 export default function contact() {
   return (
-    <div className=" text-white">
-      {/* Header */}
-      <div
-        className="relative w-full h-64 bg-cover bg-center flex items-center justify-center"
-        style={{ backgroundImage: "url('/image-background.jpg')" }}
-      >
-        <h1 className="text-5xl font-bold">CONTACT US</h1>
+    <div className="text-white">
+      <div className="relative h-96">
+        <Image
+          src="/images/image-background.jpg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
+
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+          <h1 className="text-3xl md:text-5xl font-bold">CONTACT</h1>
+        </div>
       </div>
 
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div>
-            <h2 className="text-2xl font-semibold mb-4">CONTACT INFO</h2>
-            <p className="flex items-center space-x-2">
-              📞 <span>+1 233 898 0897</span>
+          <div className="space-y-5 md:space-y-7">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
+              CONTACT INFO
+            </h2>
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+              <FiPhoneCall /> <span>+1 233 898 0897</span>
             </p>
-            <p className="flex items-center space-x-2">
-              📧 <span>email@example.com</span>
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+              <CiMail /> <span>email@example.com</span>
             </p>
-            <p className="flex items-center space-x-2">
-              📍 <span>123 Main Street, Anytown, USA.</span>
-            </p>
-
-            {/* Opening Hours */}
-            <h2 className="text-2xl font-semibold mt-6 mb-4">OPENING HOURS</h2>
-            <p>
-              Mon-Fri{" "}
-              <span className="text-orange-500 font-semibold">9 AM - 7 PM</span>
-            </p>
-            <p>
-              Sat-Sun{" "}
-              <span className="text-orange-500 font-semibold">9 AM - 5 PM</span>
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+              <CiLocationOn /> <span>123 Main Street, Anytown, USA.</span>
             </p>
           </div>
 
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-semibold mb-4">CONTACT FORM</h2>
-            <form className="space-y-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
+              FORMULAIRE DE CONTACT
+            </h2>
+            <form className="space-y-4 md:space-y-6">
               <input
                 type="text"
-                placeholder="Your Name"
-                className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg"
+                placeholder="Votre Nom"
+                className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
               />
               <input
                 type="email"
-                placeholder="Email"
-                className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg"
+                placeholder="Courriel"
+                className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
               />
               <textarea
-                placeholder="Your Message"
-                className="w-full p-3 bg-gray-800 border border-gray-600 rounded-lg h-32"
-              ></textarea>
-              <button className="w-full bg-transparent border-2 border-orange-500 text-orange-500 py-3 rounded-lg hover:bg-orange-500 hover:text-white transition">
-                Send Message
+                placeholder="Votre Message"
+                className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
+              />
+              <button
+                type="button"
+                className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group bg-[#0c0c0c]"
+              >
+                <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+                <strong className="relative z-10 text-xl md:text-2xl">
+                  Envoyer le message
+                </strong>
               </button>
             </form>
           </div>
