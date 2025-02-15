@@ -33,13 +33,14 @@ export default function contact() {
               CONTACT INFO
             </h2>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
-              <FiPhoneCall /> <span>+1 233 898 0897</span>
+              <FiPhoneCall /> <span>+1 (514) 296-5702</span>
             </p>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
-              <CiMail /> <span>email@example.com</span>
+              <CiMail /> <span>Fouodohchristian@yahoo.com</span>
             </p>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
-              <CiLocationOn /> <span>123 Main Street, Anytown, USA.</span>
+              <CiLocationOn />{" "}
+              <span>3400 rue saint germain, Montréal, Québec</span>
             </p>
           </div>
 
@@ -51,7 +52,7 @@ export default function contact() {
             <form className="space-y-4 md:space-y-6">
               <input
                 type="text"
-                placeholder="Votre Nom"
+                placeholder="Votre nom"
                 className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
               />
               <input
@@ -60,7 +61,7 @@ export default function contact() {
                 className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
               />
               <textarea
-                placeholder="Votre Message"
+                placeholder="Votre message"
                 className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
               />
               <button
