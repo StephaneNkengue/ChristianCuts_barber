@@ -9,9 +9,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="scrollbar-hide overflow-x-hidden scroll-behavior-smooth">
         <Header />
-        <main>{children}</main>
+        <main className="transition-all duration-500 ease-in-out">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -26,9 +26,12 @@ export default function page() {
           and styling services tailored to your unique preferences. Let’s go!
         </p>
 
-        {/* Button */}
-        <button className="mt-6 px-6 py-3 border-2 border-orange-500 text-white font-semibold hover:bg-orange-500 transition-all">
-          Book Appointment
+        <button
+          type="button"
+          className=" mt-6 px-6 relative border border-orange-500 text-white py-2 rounded-md overflow-hidden group"
+        >
+          <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+          <strong className="relative z-10 text-2xl">Book Appointment</strong>
         </button>
       </div>
     </div>
