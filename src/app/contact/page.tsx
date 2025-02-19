@@ -8,7 +8,7 @@ import ContactForm from "../components/contactForm";
 export default function contact() {
   return (
     <div className="text-white">
-      <ImageBackTop />
+      <ImageBackTop title="CONTACT" />
 
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="grid md:grid-cols-2 gap-8">
