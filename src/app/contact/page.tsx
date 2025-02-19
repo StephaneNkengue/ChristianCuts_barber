@@ -2,29 +2,13 @@ import React from "react";
 import { FiPhoneCall } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
-import Image from "next/image";
+import ImageBackTop from "../components/imageBackTop";
 import ContactForm from "../components/contactForm";
 
 export default function contact() {
   return (
     <div className="text-white">
-      <div className="relative h-96 w-full">
-        <Image
-          src="/images/image-background.jpg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          priority
-          className="w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/50"></div>
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-          <h1 className="text-3xl md:text-5xl font-bold">CONTACT</h1>
-        </div>
-      </div>
+      <ImageBackTop />
 
       <div className="container mx-auto px-4 md:px-6 py-8 md:py-16">
         <div className="grid md:grid-cols-2 gap-8">
