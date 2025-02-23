@@ -1,8 +1,13 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const header = () => {
+  const pathname = usePathname();
+
   return (
     <header className="bg-[#0c0c0c] text-white py-4 ">
       <div className="container mx-auto flex justify-evenly items-center px-6">
@@ -20,24 +25,23 @@ const header = () => {
         </Link>
 
         <nav className="flex text-2xl mx-20 space-x-6 text-gray-400">
-          <Link
-            href="/"
-            className="active:text-orange-500 active:font-semibold active:hover:text-orange-500  transition duration-1000 ease-in-out"
-          >
-            Home
-          </Link>
-          <Link
-            href="/service"
-            className="active:text-orange-500 active:font-semibold hover:text-orange-500  transition duration-1000 ease-in-out"
-          >
-            Services
-          </Link>
-          <Link
-            href="/contact"
-            className="active:text-orange-500 active:font-semibold hover:text-orange-500  transition duration-1000 ease-in-out"
-          >
-            Contact
-          </Link>
+          {[
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/service" },
+            { name: "Contact", path: "/contact" },
+          ].map(({ name, path }) => (
+            <Link
+              key={path}
+              href={path}
+              className={`transition duration-300 ease-in-out ${
+                pathname === path
+                  ? "text-orange-500 font-semibold"
+                  : "hover:text-orange-500"
+              }`}
+            >
+              {name}
+            </Link>
+          ))}
         </nav>
 
         <button
