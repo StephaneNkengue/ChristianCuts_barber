@@ -22,19 +22,19 @@ const header = () => {
         <nav className="flex text-2xl mx-20 space-x-6 text-gray-400">
           <Link
             href="/"
-            className="text-orange-500 transition duration-1000 ease-in-out"
+            className="active:text-orange-500 active:font-semibold active:hover:text-orange-500  transition duration-1000 ease-in-out"
           >
             Home
           </Link>
           <Link
             href="/service"
-            className="hover:text-orange-500  transition duration-1000 ease-in-out"
+            className="active:text-orange-500 active:font-semibold hover:text-orange-500  transition duration-1000 ease-in-out"
           >
             Services
           </Link>
           <Link
             href="/contact"
-            className="hover:text-orange-500  transition duration-1000 ease-in-out"
+            className="active:text-orange-500 active:font-semibold hover:text-orange-500  transition duration-1000 ease-in-out"
           >
             Contact
           </Link>
