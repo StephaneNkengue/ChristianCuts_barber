@@ -12,8 +12,11 @@ export default function homeServices() {
   ];
 
   return (
-    <section className="p-10">
-      <div className="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <section className="pb-20 ">
+      <h2 className="text-white text-center text-6xl font-bold py-20">
+        SERVICES
+      </h2>
+      <div className="grid grid-cols-2 gap-x-60 gap-y-20 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <div key={index} className="relative">
             <Image
@@ -23,7 +26,7 @@ export default function homeServices() {
               height={500}
               className="w-full h-auto object-cover"
             />
-            <span className="absolute top-1/2 text-white font-bold text-xl tracking-wide -rotate-90 origin-left writing-mode-vertical-rl">
+            <span className="absolute top-3/4 text-white font-bold text-3xl tracking-wide -rotate-90 origin-left writing-mode-vertical-rl -inset-x-6">
               {service.name}
             </span>
           </div>
