@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import HomeServices from "./components/homeServices";
 import Galerie from "./components/galerie";
+import Statistiques from "./components/statistiques";
 
 export default function page() {
   return (
@@ -39,6 +40,7 @@ export default function page() {
         </div>
       </div>
       <HomeServices />
+      <Statistiques />
       <Galerie />
     </div>
   );
