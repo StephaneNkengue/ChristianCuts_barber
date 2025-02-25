@@ -36,7 +36,7 @@ export default function contactForm() {
     setResponseMessage("");
 
     try {
-      const res = await fetch("/api/sendEmail", {
+      const res = await fetch("/api/sendEmail/route", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -51,6 +51,7 @@ export default function contactForm() {
       }
     } catch (error) {
       setResponseMessage("Erreur de connexion.");
+      console.error("Erreur lors de l'envoi de l'email:", error);
     }
 
     setLoading(false);
@@ -61,7 +62,7 @@ export default function contactForm() {
       <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
         FORMULAIRE DE CONTACT
       </h2>
-      <form className="space-y-4 md:space-y-6">
+      <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
@@ -89,7 +90,6 @@ export default function contactForm() {
           className="w-full bg-transparent border-b border-gray-400 focus:outline-none focus:border-white text-white p-2"
         />
         <button
-          type="submit"
           disabled={loading}
           className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group bg-[#0c0c0c]"
         >
