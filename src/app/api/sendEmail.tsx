@@ -32,8 +32,8 @@ export default async function handler(
     const response = await mg.messages.create(
       process.env.MAILGUN_DOMAIN as string,
       {
-        from: process.env.MAILGUN_FROM_EMAIL as string,
-        to: process.env.MAILGUN_TO_EMAIL as string,
+        from: "Mailgun Sandbox <postmaster@sandbox92175008dba84288a2f8609a3171fc3a.mailgun.org>",
+        to: email as string,
         subject: `Nouveau message de ${name}`,
         text: `Email: ${email}\n\nMessage:\n${message}`,
       }
