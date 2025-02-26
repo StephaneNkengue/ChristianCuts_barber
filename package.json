@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "date-fns": "^4.1.0",
     "form-data": "^4.0.2",
     "framer-motion": "^12.4.4",
