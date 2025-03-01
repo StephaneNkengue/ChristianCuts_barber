@@ -1,5 +1,5 @@
 import React from "react";
-import ImageBackTop from "../components/imageBackTop";
+import ImageBackTop from "../../components/imageBackTop";
 import Image from "next/image";
 
 export default function page() {

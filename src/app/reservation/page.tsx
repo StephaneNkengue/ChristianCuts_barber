@@ -1,13 +1,24 @@
+"use client";
+
+import React from "react";
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { Calendar } from "@/components/ui/calendar";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/Calendar";
+import { Button } from "@/components/ui/Button";
+import Input from "@/components/ui/Input";
+
+interface BookingData {
+  name: string;
+  date: string;
+  time: string;
+  duration: number;
+  eventType: string;
+}
 
 export default function BookingPage() {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [name, setName] = useState("");
-  const [timeSlot, setTimeSlot] = useState("");
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(undefined);
+  const [name, setName] = useState<string>("");
+  const [timeSlot, setTimeSlot] = useState<string>("");
   const [availableTimeSlots, setAvailableTimeSlots] = useState<string[]>([]);
   const [availableDates, setAvailableDates] = useState<Set<string>>(new Set());
 
@@ -30,7 +41,7 @@ export default function BookingPage() {
       });
       if (response.ok) {
         const data = await response.json();
-        const availableDatesSet = new Set(
+        const availableDatesSet: Set<string> = new Set(
           data.availableDates.map((d: string) =>
             format(new Date(d), "yyyy-MM-dd")
           )
@@ -76,7 +87,7 @@ export default function BookingPage() {
     }
 
     const formattedDate = format(selectedDate, "yyyy-MM-dd");
-    const eventData = {
+    const eventData: BookingData = {
       name,
       date: formattedDate,
       time: timeSlot,

@@ -44,13 +44,15 @@ const header = () => {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group"
-        >
-          <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
-          <strong className="relative z-10 text-2xl">Book Appointment</strong>
-        </button>
+        <Link href={"/reservation"}>
+          <button
+            type="button"
+            className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group"
+          >
+            <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+            <strong className="relative z-10 text-2xl">Book Appointment</strong>
+          </button>
+        </Link>
       </div>
     </header>
   );

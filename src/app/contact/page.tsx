@@ -2,8 +2,8 @@ import React from "react";
 import { FiPhoneCall } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
-import ImageBackTop from "../components/imageBackTop";
-import ContactForm from "../components/contactForm";
+import ImageBackTop from "../../components/imageBackTop";
+import ContactForm from "../../components/contactForm";
 
 export default function contact() {
   return (
