@@ -22,16 +22,6 @@ export default function BookingPage() {
   const [availableTimeSlots, setAvailableTimeSlots] = useState<string[]>([]);
   const [availableDates, setAvailableDates] = useState<Set<string>>(new Set());
 
-  useEffect(() => {
-    fetchAvailableDates();
-  }, []);
-
-  useEffect(() => {
-    if (selectedDate) {
-      fetchAvailableSlots(selectedDate);
-    }
-  }, [selectedDate]);
-
   const fetchAvailableDates = async () => {
     try {
       const response = await fetch("https://api.cal.com/v1/availability", {
@@ -79,6 +69,16 @@ export default function BookingPage() {
       setAvailableTimeSlots([]);
     }
   };
+
+  useEffect(() => {
+    fetchAvailableDates();
+  }, []);
+
+  useEffect(() => {
+    if (selectedDate) {
+      fetchAvailableSlots(selectedDate);
+    }
+  }, [selectedDate, fetchAvailableSlots]);
 
   const handleBooking = async () => {
     if (!selectedDate || !timeSlot || !name) {

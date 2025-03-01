@@ -32,10 +32,10 @@ export default async function handler(
     });
 
     return res.status(200).json({ success: true, sid: sms.sid });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error sending SMS:", error);
     return res
       .status(500)
-      .json({ message: "Failed to send SMS", error: error.message });
+      .json({ message: "Failed to send SMS", error: (error as Error).message });
   }
 }

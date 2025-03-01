@@ -36,11 +36,9 @@ export default function page() {
               <h2 className="text-3xl font-bold">HAIR STYLING</h2>
               <p className="text-gray-300 mt-4">
                 Our experienced stylists are skilled in creating a wide range of
-                hair styles to suit your preferences. Whether you're looking for
-                a trendy haircut, a classic updo, or a special occasion
-                hairstyle, we have the expertise to bring your vision to life.
-                With a keen eye for detail and a deep understanding of hair
-                textures and face shapes, we'll work with you to achieve a
+                hair styles to suit your preferences. Whether you&apos;re
+                looking for a trendy haircut, a classic updo, or a special
+                occasion hairstyle, we&apos;ll work with you to achieve a
                 personalized and flattering style that complements your
                 individuality.
               </p>

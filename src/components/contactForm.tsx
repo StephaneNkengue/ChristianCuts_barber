@@ -9,7 +9,7 @@ interface FormData {
   message: string;
 }
 
-export default function contactForm() {
+export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
