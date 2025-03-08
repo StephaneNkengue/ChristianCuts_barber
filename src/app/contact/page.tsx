@@ -19,7 +19,10 @@ export default function contact() {
               CONTACT INFO
             </h2>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
-              <FiPhoneCall /> <span>+1 (514) 296-5702</span>
+              <FiPhoneCall />{" "}
+              <a href="tel:+15142965702" className="hover:text-orange-500">
+                +1 (514) 296-5702
+              </a>
             </p>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
               <CiMail />{" "}

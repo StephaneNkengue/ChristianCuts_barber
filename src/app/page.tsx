@@ -24,11 +24,11 @@ export default function page() {
 
         <div className="relative z-10 flex flex-col justify-start items-start h-full px-6 sm:px-10 md:px-20 lg:ms-20 xl:ms-44 pt-24 sm:pt-32 md:pt-44 text-white">
           <h3 className="text-xl sm:text-2xl md:text-3xl uppercase font-bold">
-            We are here
+            Ici, je suis
           </h3>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mt-2 uppercase">
-            Trim & Style <br />
-            <span className="text-orange-500">You</span>
+            christian <br />
+            <span className="text-orange-500">cutz</span>
           </h1>
           <p className="mt-4 max-w-lg text-gray-300 text-sm sm:text-base md:text-lg">
             At Trim & Style, we are dedicated to providing exceptional grooming
