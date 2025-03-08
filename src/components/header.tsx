@@ -1,13 +1,24 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { PopupButton } from "react-calendly";
 
-const header = () => {
+const Header = () => {
   const pathname = usePathname();
+  const [meetingUrl, setMeetingUrl] = useState<string>(
+    "https://meet.brevo.com/stephane-nkengue?hl=fr&language=fr&locale=fr_FR&ui=fr"
+  );
+
+  useEffect(() => {
+    // Récupérer l'URL de base de Brevo Meeting
+    if (process.env.NEXT_PUBLIC_BREVO_MEETING_URL) {
+      const baseUrl = process.env.NEXT_PUBLIC_BREVO_MEETING_URL;
+      // Essayer plusieurs options pour forcer la langue française
+      setMeetingUrl(`${baseUrl}?hl=fr&language=fr&locale=fr_FR&ui=fr`);
+    }
+  }, []);
 
   return (
     <header className="bg-[#0c0c0c] text-white py-4 ">
@@ -30,6 +41,7 @@ const header = () => {
             { name: "Home", path: "/" },
             { name: "Services", path: "/service" },
             { name: "Contact", path: "/contact" },
+            { name: "Réservation", path: "/reservation" },
           ].map(({ name, path }) => (
             <Link
               key={path}
@@ -45,17 +57,22 @@ const header = () => {
           ))}
         </nav>
 
-        <PopupButton
-          url="https://calendly.com/ton-lien"
-          rootElement={document.body}
-          className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group"
+        <a
+          href={meetingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          hrefLang="fr"
         >
-          <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
-          <strong className="relative z-10 text-2xl">Book Appointment</strong>
-        </PopupButton>
+          <button className="relative border border-orange-500 text-orange-500 px-4 py-2 rounded-md overflow-hidden group">
+            <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+            <strong className="relative z-10 text-2xl group-hover:text-white transition-colors duration-300">
+              Réserver
+            </strong>
+          </button>
+        </a>
       </div>
     </header>
   );
 };
 
-export default header;
+export default Header;
