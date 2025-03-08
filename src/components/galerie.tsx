@@ -14,11 +14,11 @@ const images = [
 
 export default function galerie() {
   return (
-    <section className="mb-20">
-      <h2 className="text-white text-6xl font-bold my-20 text-center">
+    <section className="mb-10 sm:mb-16 md:mb-20 px-4 sm:px-6">
+      <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold my-10 sm:my-14 md:my-20 text-center">
         Galérie
       </h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
         {images.map((src, index) => (
           <div key={index} className="overflow-hidden rounded-lg">
             <Image
