@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { PopupButton } from "react-calendly";
 
 const header = () => {
   const pathname = usePathname();
@@ -44,15 +45,14 @@ const header = () => {
           ))}
         </nav>
 
-        <Link href={"/reservation"}>
-          <button
-            type="button"
-            className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group"
-          >
-            <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
-            <strong className="relative z-10 text-2xl">Book Appointment</strong>
-          </button>
-        </Link>
+        <PopupButton
+          url="https://calendly.com/ton-lien"
+          rootElement={document.body}
+          className="relative border border-orange-500 text-white px-4 py-2 rounded-md overflow-hidden group"
+        >
+          <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+          <strong className="relative z-10 text-2xl">Book Appointment</strong>
+        </PopupButton>
       </div>
     </header>
   );
