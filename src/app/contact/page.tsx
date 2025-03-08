@@ -17,13 +17,13 @@ export default function contact() {
             <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-5">
               CONTACT INFO
             </h2>
-            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
               <FiPhoneCall /> <span>+1 (514) 296-5702</span>
             </p>
-            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
               <CiMail /> <span>Fouodohchristian@yahoo.com</span>
             </p>
-            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-2xl">
+            <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
               <CiLocationOn />{" "}
               <span>3400 rue saint germain, Montréal, Québec</span>
             </p>
