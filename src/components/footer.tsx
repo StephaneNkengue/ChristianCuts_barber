@@ -12,7 +12,7 @@ export default function footer() {
           <div className="text-2xl sm:text-3xl md:text-4xl font-bold flex items-center">
             <span className="text-white">CHRISTIAN</span>
             <Image
-              src="/icons/Logo2.PNG"
+              src="/images/icons/Logo2.PNG"
               width={90}
               height={90}
               alt="Picture of the author"
