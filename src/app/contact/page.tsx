@@ -4,6 +4,7 @@ import { CiMail } from "react-icons/ci";
 import { CiLocationOn } from "react-icons/ci";
 import ImageBackTop from "../../components/imageBackTop";
 import ContactForm from "../../components/contactForm";
+import Link from "next/link";
 
 export default function contact() {
   return (
@@ -21,11 +22,22 @@ export default function contact() {
               <FiPhoneCall /> <span>+1 (514) 296-5702</span>
             </p>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
-              <CiMail /> <span>Fouodohchristian@yahoo.com</span>
+              <CiMail />{" "}
+              <Link
+                href="mailto:Fouodohchristian@yahoo.com"
+                className="hover:text-orange-500"
+              >
+                Fouodohchristian@yahoo.com
+              </Link>
             </p>
             <p className="flex items-center space-x-2 md:space-x-4 text-xl md:text-xl">
               <CiLocationOn />{" "}
-              <span>3400 rue saint germain, Montréal, Québec</span>
+              <Link
+                href="https://maps.app.goo.gl/R4mRqBrE5P1Fqcss5"
+                className="hover:text-orange-500"
+              >
+                <span>3400 rue saint germain, Montréal, Québec</span>
+              </Link>
             </p>
           </div>
 
