@@ -43,7 +43,7 @@ export default function HomeServices() {
             {/* Texte vertical - dans sa propre colonne */}
             <div className="pr-4 w-10">
               <div
-                className="text-white font-bold text-xl tracking-widest"
+                className="text-white font-bold text-3xl tracking-widest"
                 style={{
                   writingMode: "vertical-lr",
                   transform: "rotate(180deg)",

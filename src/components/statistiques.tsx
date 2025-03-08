@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Données des statistiques
 const stats = [
   { value: 25, suffix: "+", label: "Years of Experience" },
   { value: 1000, suffix: "+", label: "Services Completed" },
@@ -10,14 +11,17 @@ const stats = [
   { value: 1220, suffix: "+", label: "Happy Customers" },
 ];
 
-export default function statistiques() {
+export default function Statistiques() {
   return (
-    <section className=" bg-black mb-20">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center my-20">
+    <section className="w-full bg-[#181818]">
+      <div className="w-full flex flex-wrap justify-between text-center">
         {stats.map((stat, index) => (
-          <div key={index} className="bg-black text-white p-6 rounded-lg">
+          <div
+            key={index}
+            className="flex-1 py-8 px-4 flex flex-col items-center justify-center border-r border-[#222222] last:border-r-0"
+          >
             <motion.h2
-              className="text-6xl font-bold"
+              className="text-6xl md:text-8xl font-bold text-white mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
@@ -25,7 +29,7 @@ export default function statistiques() {
               {stat.value}
               {stat.suffix}
             </motion.h2>
-            <p className="text-gray-400">{stat.label}</p>
+            <p className="text-gray-400 text-sm md:text-base">{stat.label}</p>
           </div>
         ))}
       </div>
