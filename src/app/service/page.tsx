@@ -3,6 +3,9 @@ import ImageBackTop from "../../components/imageBackTop";
 import Image from "next/image";
 
 export default function page() {
+  // URL de réservation Brevo
+  const meetingUrl = "https://meet.brevo.com/stephane-nkengue?lang=fr";
+
   return (
     <div>
       <ImageBackTop title="SERVICES" />
@@ -50,15 +53,15 @@ export default function page() {
                 <li className="font-semibold">Finishing Touches</li>
               </ul>
 
-              <button
-                type="button"
-                className=" mt-6 px-4 relative border border-orange-500 text-white py-2 rounded-md overflow-hidden group"
+              <a
+                href={meetingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-6 px-4 relative border border-orange-500 text-white py-2 rounded-md overflow-hidden group"
               >
                 <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
-                <strong className="relative z-10 text-l">
-                  Book Appointment
-                </strong>
-              </button>
+                <strong className="relative z-10 text-l">Réserver</strong>
+              </a>
             </div>
           </div>
         ))}

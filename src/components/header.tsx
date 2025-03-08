@@ -54,7 +54,7 @@ const Header = () => {
         {/* Navigation sur desktop */}
         <nav className="hidden md:flex text-lg lg:text-2xl mx-4 lg:mx-20 space-x-4 lg:space-x-6 text-gray-400">
           {[
-            { name: "Home", path: "/" },
+            { name: "Accueil", path: "/" },
             { name: "Services", path: "/service" },
             { name: "Contact", path: "/contact" },
           ].map(({ name, path }) => (

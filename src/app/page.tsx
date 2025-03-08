@@ -3,8 +3,12 @@ import Image from "next/image";
 import HomeServices from "../components/homeServices";
 import Galerie from "../components/galerie";
 import Statistiques from "../components/statistiques";
+import Link from "next/link";
 
 export default function page() {
+  // URL de réservation Brevo
+  const meetingUrl = "https://meet.brevo.com/stephane-nkengue?lang=fr";
+
   return (
     <div>
       <div className="relative w-full h-screen">
@@ -32,15 +36,17 @@ export default function page() {
             and styling services tailored to your unique preferences. Let's go!
           </p>
 
-          <button
-            type="button"
+          <a
+            href={meetingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 sm:mt-8 md:mt-12 px-4 sm:px-6 relative border border-orange-500 text-white py-1 sm:py-2 rounded-md overflow-hidden group"
           >
             <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
             <strong className="relative z-10 text-lg sm:text-xl md:text-2xl lg:text-3xl">
-              Book Appointment
+              Réserver
             </strong>
-          </button>
+          </a>
         </div>
       </div>
       <HomeServices />
