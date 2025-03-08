@@ -3,7 +3,6 @@ import Image from "next/image";
 import HomeServices from "../components/homeServices";
 import Galerie from "../components/galerie";
 import Statistiques from "../components/statistiques";
-import Link from "next/link";
 
 export default function page() {
   // URL de réservation Brevo
@@ -33,7 +32,8 @@ export default function page() {
           </h1>
           <p className="mt-4 max-w-lg text-gray-300 text-sm sm:text-base md:text-lg">
             At Trim & Style, we are dedicated to providing exceptional grooming
-            and styling services tailored to your unique preferences. Let's go!
+            and styling services tailored to your unique preferences. Let&apos;s
+            go!
           </p>
 
           <a
