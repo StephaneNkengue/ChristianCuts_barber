@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description:
     "Découvrez Christian Cutz, votre barbier professionnel proposant des coupes personnalisées et des services de qualité",
   icons: {
-    icon: "/icons/logo2.PNG",
-    apple: "/icons/logo2.PNG",
+    icon: "/icons/logo3.PNG",
+    apple: "/icons/logo3.PNG",
   },
 };
 
