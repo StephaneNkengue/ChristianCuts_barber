@@ -4,12 +4,18 @@ import React from "react";
 import Image from "next/image";
 
 const images = [
-  "/images/test.jpg",
-  "/images/test.jpg",
-  "/images/test.jpg",
-  "/images/test.jpg",
-  "/images/test.jpg",
-  "/images/test.jpg",
+  "/galerie/gal1.jpg",
+  "/galerie/gal2.jpg",
+  "/galerie/gal3.jpg",
+  "/galerie/gal4.jpg",
+  "/galerie/gal5.jpg",
+  "/galerie/gal6.jpg",
+  "/galerie/gal7.jpg",
+  "/galerie/gal8.jpg",
+  "/galerie/gal9.jpg",
+  "/galerie/gal10.jpg",
+  "/galerie/gal13.jpg",
+  "/galerie/gal14.jpg",
 ];
 
 export default function galerie() {
