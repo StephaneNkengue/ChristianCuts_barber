@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaInstagram } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 
-export default function footer() {
+export default function Footer() {
   const pathname = usePathname();
 
   return (
