@@ -43,7 +43,7 @@ const Loader = () => {
 
         {/* Image au milieu */}
         <motion.img
-          src="/icons/logo2.png" // Remplace avec ton image
+          src="/icons/logo2.PNG" // Remplace avec ton image
           alt="Logo"
           className="mx-2 sm:mx-3 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-[180px] xl:h-[180px] my-2 sm:my-0"
           initial={{ opacity: 0, scale: 0.5 }}
