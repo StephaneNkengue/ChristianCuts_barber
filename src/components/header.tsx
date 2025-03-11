@@ -33,7 +33,7 @@ const Header = () => {
           <div className="text-xl sm:text-2xl md:text-3xl font-bold flex items-center">
             <span className="text-white">CHRISTIAN</span>
             <Image
-              src="/icons/logo2.PNG"
+              src="/icons/logo3.PNG"
               width={80}
               height={80}
               alt="Picture of the author"
