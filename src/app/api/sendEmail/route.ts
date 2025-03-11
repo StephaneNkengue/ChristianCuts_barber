@@ -29,7 +29,7 @@ export async function POST(request: Request) {
         html: `
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: 'Arial', sans-serif; color: #333;">
           <div style="text-align: center; margin-bottom: 30px;">
-            <h1 style="color: #000; margin: 0; font-size: 28px; display: inline-block; vertical-align: middle;">CHRISTIAN <img src="https://christian-cutz.com/icons/logo2.PNG" alt="Logo" style="width: 50px; height: 50px; vertical-align: middle; margin: 0 5px;"> CUTZ</h1>
+            <h1 style="color: #000; margin: 0; font-size: 28px; display: inline-block; vertical-align: middle;">CHRISTIAN <img src="https://christian-cutz.com/icons/logo2.png" alt="Logo" style="width: 50px; height: 50px; vertical-align: middle; margin: 0 5px;"> CUTZ</h1>
             <p style="color: #666; font-size: 14px; margin-top: 5px;">SINCE 2022</p>
           </div>
           
