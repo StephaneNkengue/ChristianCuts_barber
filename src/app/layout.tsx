@@ -3,6 +3,18 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Loader from "./loading";
 import React from "react";
+import { Metadata } from "next";
+
+// Définir les métadonnées du site, incluant la favicon
+export const metadata: Metadata = {
+  title: "Christian Cutz | Barbier professionnel",
+  description:
+    "Découvrez Christian Cutz, votre barbier professionnel proposant des coupes personnalisées et des services de qualité",
+  icons: {
+    icon: "/icons/logo2.png",
+    apple: "/icons/logo2.png",
+  },
+};
 
 export default function RootLayout({
   children,
