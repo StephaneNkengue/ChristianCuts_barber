@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function page() {
   // URL de réservation Brevo
-  const meetingUrl = "https://meet.brevo.com/christiancutz?lang=fr";
+  const meetingUrl = "https://meet.brevo.com/christian-cutz";
 
   // Tableau avec les services spécifiques
   const services = [

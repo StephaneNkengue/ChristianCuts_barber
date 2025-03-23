@@ -6,7 +6,7 @@ import Statistiques from "../components/statistiques";
 
 export default function page() {
   // URL de réservation Brevo
-  const meetingUrl = "https://meet.brevo.com/stephane-nkengue?lang=fr";
+  const meetingUrl = "https://meet.brevo.com/christian-cutz";
 
   return (
     <div>
