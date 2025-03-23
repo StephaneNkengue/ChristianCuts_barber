@@ -25,7 +25,7 @@ export default function page() {
     },
     {
       title: "COIFFURE & LAVAGE",
-      image: "/images/test.jpg",
+      image: "/galerie/gal19.jpg",
       price: "55$",
     },
     {
