@@ -29,8 +29,8 @@ export default function Page() {
           <h3 className="text-2xl font-bold mb-4 text-orange-500">Retards</h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Un retard de plus de 10-15 minutes peut entraîner l'annulation du
-              rendez-vous.
+              Un retard de plus de 10-15 minutes peut entraîner
+              l&apos;annulation du rendez-vous.
             </li>
             <li>
               Si le retard est acceptable, la coupe sera adaptée au temps
@@ -46,8 +46,8 @@ export default function Page() {
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Les annulations doivent être faites au moins 24h à l'avance pour
-              obtenir un remboursement de l'acompte (si applicable).
+              Les annulations doivent être faites au moins 24h à l&apos;avance
+              pour obtenir un remboursement de l&apos;acompte (si applicable).
             </li>
           </ul>
         </div>
@@ -59,12 +59,12 @@ export default function Page() {
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Une absence sans préavis entraîne la perte de l'acompte et peut
-              bloquer les futures réservations.
+              Une absence sans préavis entraîne la perte de l&apos;acompte et
+              peut bloquer les futures réservations.
             </li>
             <li>
               Après deux absences non justifiées, une réservation ne pourra se
-              faire que sur paiement complet à l'avance.
+              faire que sur paiement complet à l&apos;avance.
             </li>
           </ul>
         </div>
@@ -76,8 +76,8 @@ export default function Page() {
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Merci d'arriver avec des cheveux propres pour garantir une coupe
-              optimale.
+              Merci d&apos;arriver avec des cheveux propres pour garantir une
+              coupe optimale.
             </li>
             <li>
               Toute attitude irrespectueuse envers le personnel ou les autres
@@ -106,8 +106,8 @@ export default function Page() {
           </h3>
           <ul className="list-disc pl-5 space-y-2">
             <li>
-              Besoin d'une coupe rapide ? Optez pour le service express pour
-              être pris en charge en priorité.
+              Besoin d&apos;une coupe rapide ? Optez pour le service express
+              pour être pris en charge en priorité.
             </li>
             <li>
               Disponible uniquement sur certains créneaux et sous réserve de
