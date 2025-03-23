@@ -9,7 +9,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = () => {
   const pathname = usePathname();
   const [meetingUrl, setMeetingUrl] = useState<string>(
-    "https://meet.brevo.com/christian-cutz"
+    "https://meet.brevo.com/christiancutz?lang=fr"
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,8 +17,8 @@ const Header = () => {
     // Récupérer l'URL de base de Brevo Meeting
     if (process.env.NEXT_PUBLIC_BREVO_MEETING_URL) {
       const baseUrl = process.env.NEXT_PUBLIC_BREVO_MEETING_URL;
-      // Utiliser l'URL telle quelle sans ajouter de paramètre
-      setMeetingUrl(baseUrl);
+      // Ajouter le paramètre de langue française
+      setMeetingUrl(`${baseUrl}?lang=fr`);
     }
   }, []);
 
