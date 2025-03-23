@@ -5,10 +5,9 @@ import { motion } from "framer-motion";
 
 // Données des statistiques
 const stats = [
-  { value: 25, suffix: "+", label: "Years of Experience" },
-  { value: 1000, suffix: "+", label: "Services Completed" },
-  { value: 21, suffix: "", label: "Experienced Staff" },
-  { value: 1220, suffix: "+", label: "Happy Customers" },
+  { value: 2, suffix: "+", label: "Années d'expérience" },
+  { value: 20, suffix: "+", label: "Services effectués" },
+  { value: 500, suffix: "+", label: "Clients satisfaits" },
 ];
 
 export default function Statistiques() {

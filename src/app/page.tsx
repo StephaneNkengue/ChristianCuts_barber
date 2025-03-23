@@ -24,16 +24,16 @@ export default function page() {
 
         <div className="relative z-10 flex flex-col justify-start items-start h-full px-6 sm:px-10 md:px-20 lg:ms-20 xl:ms-44 pt-24 sm:pt-32 md:pt-44 text-white">
           <h3 className="text-xl sm:text-2xl md:text-3xl uppercase font-bold">
-            Ici, je suis
+            Ici, je suis chez
           </h3>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mt-2 uppercase">
             christian <br />
             <span className="text-orange-500">cutz</span>
           </h1>
           <p className="mt-4 max-w-lg text-gray-300 text-sm sm:text-base md:text-lg">
-            At Trim & Style, we are dedicated to providing exceptional grooming
-            and styling services tailored to your unique preferences. Let&apos;s
-            go!
+            Chez Christian Cutz, nous nous engageons à offrir des services de
+            coiffure et de style exceptionnels, adaptés à vos préférences
+            uniques. Prenez rendez-vous!
           </p>
 
           <a

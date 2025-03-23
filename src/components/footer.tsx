@@ -34,6 +34,7 @@ export default function Footer() {
           {[
             { name: "Accueil", path: "/" },
             { name: "Services", path: "/service" },
+            { name: "Modalités", path: "/modalite" },
             { name: "Contact", path: "/contact" },
           ].map(({ name, path }) => (
             <Link

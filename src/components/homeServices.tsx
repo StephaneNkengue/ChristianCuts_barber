@@ -8,24 +8,24 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 // Définition des services avec des données complètes
 const services = [
   {
-    name: "HAIR STYLING",
-    image: "/images/test.jpg",
-    text: "Coupes personnalisées adaptées à votre style",
+    name: "TEINTURE",
+    image: "/galerie/gal1.jpg",
+    text: "Colorations de qualité à votre guise",
   },
   {
-    name: "BEARD TRIM",
-    image: "/images/test.jpg",
-    text: "Taille et entretien de barbe professionnels",
+    name: "COUPE CLASSIQUE",
+    image: "/galerie/gal13.jpg",
+    text: "Coupe classique ",
   },
   {
-    name: "HAIR COLOR",
-    image: "/images/test.jpg",
-    text: "Colorations et mèches de qualité salon",
+    name: "COUPE & LAVAGE",
+    image: "/galerie/gal10.jpg",
+    text: "Coupes personnalisées adaptées et lavage de cheveux",
   },
   {
-    name: "SHAVING",
-    image: "/images/test.jpg",
-    text: "Rasage traditionnel à l'ancienne",
+    name: "CONTOUR UNIQUE",
+    image: "/galerie/gal14.jpg",
+    text: "Contour unique et soin de la barbe",
   },
 ];
 

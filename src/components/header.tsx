@@ -56,6 +56,7 @@ const Header = () => {
           {[
             { name: "Accueil", path: "/" },
             { name: "Services", path: "/service" },
+            { name: "Modalités", path: "/modalite" },
             { name: "Contact", path: "/contact" },
           ].map(({ name, path }) => (
             <Link
@@ -93,8 +94,9 @@ const Header = () => {
         <div className="md:hidden bg-[#0c0c0c] py-4 px-6">
           <nav className="flex flex-col space-y-4 text-xl text-gray-400">
             {[
-              { name: "Home", path: "/" },
+              { name: "Accueil", path: "/" },
               { name: "Services", path: "/service" },
+              { name: "Modalités", path: "/modalite" },
               { name: "Contact", path: "/contact" },
             ].map(({ name, path }) => (
               <Link

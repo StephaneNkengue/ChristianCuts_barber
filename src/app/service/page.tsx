@@ -6,23 +6,72 @@ export default function page() {
   // URL de réservation Brevo
   const meetingUrl = "https://meet.brevo.com/stephane-nkengue?lang=fr";
 
+  // Tableau avec les services spécifiques
+  const services = [
+    {
+      title: "HOME SERVICE",
+      image: "/galerie/gal18.jpg",
+      price: "À partir de 100$",
+    },
+    {
+      title: "COUPE CLASSIQUE",
+      image: "/galerie/gal13.jpg",
+      price: "40$",
+    },
+    {
+      title: "COUPE & BARBE",
+      image: "/galerie/gal10.jpg",
+      price: "45$",
+    },
+    {
+      title: "COIFFURE & LAVAGE",
+      image: "/images/test.jpg",
+      price: "55$",
+    },
+    {
+      title: "CONTOUR UNIQUE",
+      image: "/galerie/gal14.jpg",
+      price: "25$",
+    },
+    {
+      title: "COIFFURE D'ANNIVERSAIRE",
+      image: "/galerie/gal12.jpg",
+      price: "Gratuit",
+    },
+    {
+      title: "TEINTURE",
+      image: "/galerie/gal1.jpg",
+      price: "COLORATION : 60$ | DECOLORATION : 90$",
+    },
+    {
+      title: "NATTES",
+      image: "/galerie/gal17.jpg",
+      price: "40$ ",
+    },
+    {
+      title: "TWIST",
+      image: "/galerie/gal16.jpg",
+      price: "50$",
+    },
+  ];
+
   return (
     <div>
       <ImageBackTop title="SERVICES" />
 
       <div className="text-white py-16 px-6 md:px-20">
-        {Array.from({ length: 8 }).map((_, index) => (
+        {services.map((service, index) => (
           <div
             key={index}
-            className="max-w-6xl mx-auto flex flex-col md:flex-row items-center mb-8"
+            className="max-w-6xl mx-auto flex flex-col md:flex-row items-center mb-20"
           >
             {/* Image Section */}
             <div className="w-full md:w-1/2 relative">
               <Image
-                src="/images/test.jpg"
-                alt="Hair Styling"
+                src={service.image}
+                alt={service.title}
                 width={600}
-                height={400}
+                height={200}
                 className="rounded-lg"
               />
               <div
@@ -36,22 +85,10 @@ export default function page() {
 
             {/* Text Section */}
             <div className="w-full md:w-3/4 md:pl-12 mt-8 md:mt-0">
-              <h2 className="text-3xl font-bold">HAIR STYLING</h2>
-              <p className="text-gray-300 mt-4">
-                Our experienced stylists are skilled in creating a wide range of
-                hair styles to suit your preferences. Whether you&apos;re
-                looking for a trendy haircut, a classic updo, or a special
-                occasion hairstyle, we&apos;ll work with you to achieve a
-                personalized and flattering style that complements your
-                individuality.
+              <h2 className="text-3xl font-bold">{service.title}</h2>
+              <p className="text-orange-500 mt-4 text-4xl font-bold">
+                {service.price}
               </p>
-
-              {/* Bullet Points */}
-              <ul className="mt-4 space-y-2">
-                <li className="font-semibold">Customized Styles</li>
-                <li className="font-semibold">Trendy and Versatile</li>
-                <li className="font-semibold">Finishing Touches</li>
-              </ul>
 
               <a
                 href={meetingUrl}
