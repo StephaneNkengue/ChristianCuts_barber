@@ -55,6 +55,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/christian_cutzzzzz/?utm_source=ig_web_button_share_sheet"
             className="hover:text-white"
+            target="_blank"
           >
             <FaInstagram />
           </a>

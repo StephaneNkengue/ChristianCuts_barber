@@ -45,6 +45,9 @@ export default function ContactForm() {
       const data = await res.json();
       if (res.ok) {
         setResponseMessage("Email envoyé avec succès !");
+        setTimeout(() => {
+          setResponseMessage("");
+        }, 2000);
         setFormData({ name: "", email: "", message: "" });
       } else {
         setResponseMessage(data.message || "Une erreur est survenue.");

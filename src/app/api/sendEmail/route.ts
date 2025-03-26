@@ -23,8 +23,8 @@ export async function POST(request: Request) {
     const response = await mg.messages.create(
       process.env.MAILGUN_DOMAIN as string,
       {
-        from: "Christian Cutz <postmaster@sandbox92175008dba84288a2f8609a3171fc3a.mailgun.org>",
-        to: "fouodohchristian@yahoo.com",
+        from: "Christian Cutz <postmaster@christian-cutz.com>",
+        to: "Fouodoh Christian <fouodohchristian@yahoo.com>",
         subject: `Nouveau message de ${name}`,
         html: `
         <div style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: 'Arial', sans-serif; color: #333;">
