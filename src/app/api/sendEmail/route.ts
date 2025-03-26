@@ -34,8 +34,7 @@ export async function POST(request: Request) {
           </div>
           
           <div style="background-color: #2c2d2f; border-left: 4px solid #f97316; padding: 20px; border-radius: 4px; margin-bottom: 20px;">
-            <h2 style="color: #fff; margin-top: 0; margin-bottom: 15px; font-size: 20px;">Nouveau message de contact</h2>
-            <p style="color: #fff; margin: 0 0 10px; font-size: 16px;"><strong>Nom:</strong> ${name}</p>
+            <h2 style="color: #fff; margin-top: 0; margin-bottom: 15px; font-size: 20px;">Nouveau message de ${name}</h2>
             <p style="color: #fff; margin: 0 0 10px; font-size: 16px;"><strong>Email:</strong> ${email}</p>
             <div style="color: #fff; margin: 0; font-size: 16px;">
               <p style="margin-top: 0;"><strong>Message:</strong></p>
