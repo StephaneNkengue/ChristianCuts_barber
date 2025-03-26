@@ -48,6 +48,7 @@ export async function POST(request: Request) {
             <div>
               <a href="https://christian-cutz.com/" style="color: #f97316; text-decoration: none; margin: 0 10px;">Accueil</a>
               <a href="https://christian-cutz.com/service" style="color: #f97316; text-decoration: none; margin: 0 10px;">Services</a>
+              <a href="https://christian-cutz.com/modalite" style="color: #f97316; text-decoration: none; margin: 0 10px;">Modalités</a>
               <a href="https://christian-cutz.com/contact" style="color: #f97316; text-decoration: none; margin: 0 10px;">Contact</a>
             </div>
           </div>
