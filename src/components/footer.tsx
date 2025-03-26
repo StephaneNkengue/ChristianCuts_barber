@@ -52,7 +52,10 @@ export default function Footer() {
         </nav>
 
         <div className="flex space-x-4 sm:space-x-6 text-gray-400 text-2xl sm:text-3xl md:text-4xl">
-          <a href="#" className="hover:text-white">
+          <a
+            href="https://www.instagram.com/christian_cutzzzzz/?utm_source=ig_web_button_share_sheet"
+            className="hover:text-white"
+          >
             <FaInstagram />
           </a>
         </div>
