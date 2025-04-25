@@ -71,7 +71,8 @@ export default function Footer() {
           >
             Stéphane Darryl Wamo Nkengue
           </Link>
-          . © Copyright 2025 Christian Cutz. Tous droits réservé
+          . © Copyright {new Date().getFullYear()} Christian Cutz. Tous droits
+          réservé
         </p>
       </div>
     </footer>
