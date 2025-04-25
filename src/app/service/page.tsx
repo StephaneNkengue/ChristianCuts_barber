@@ -30,7 +30,7 @@ export default function page() {
     },
     {
       title: "CONTOUR UNIQUE",
-      image: "/galerie/gal14.jpg",
+      image: "/galerie/gal22.jpg",
       price: "25$",
     },
     {

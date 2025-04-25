@@ -63,8 +63,15 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-white text-xs sm:text-sm max-w-md mx-auto">
-          Réalisé par Stéphane Darryl Wamo Nkengue. © Copyright 2025 Christian
-          Cutz. Tous droits réservé
+          Réalisé par{" "}
+          <Link
+            href="https://www.snkode.com/"
+            className="hover:text-orange-500"
+            target="_blank"
+          >
+            Stéphane Darryl Wamo Nkengue
+          </Link>
+          . © Copyright 2025 Christian Cutz. Tous droits réservé
         </p>
       </div>
     </footer>
