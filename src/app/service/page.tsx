@@ -21,12 +21,12 @@ export default function page() {
     {
       title: "COUPE & BARBE",
       image: "/galerie/gal10.jpg",
-      price: "45$",
+      price: "50$",
     },
     {
       title: "COIFFURE & LAVAGE",
       image: "/galerie/gal19.jpg",
-      price: "55$",
+      price: "60$",
     },
     {
       title: "CONTOUR UNIQUE",
