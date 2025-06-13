@@ -41,7 +41,7 @@ export default function page() {
     {
       title: "TEINTURE",
       image: "/galerie/gal1.jpg",
-      price: "COLORATION : 60$ | DECOLORATION : 90$",
+      price: "COLORATION : 60$ | DECOLORATION : 100$",
     },
     {
       title: "NATTES",
