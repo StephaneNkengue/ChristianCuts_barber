@@ -11,7 +11,7 @@ export default function page() {
     {
       title: "HOME SERVICE",
       image: "/galerie/gal18.jpg",
-      price: "À partir de 100$",
+      price: "À partir de 150$",
     },
     {
       title: "COUPE CLASSIQUE",
