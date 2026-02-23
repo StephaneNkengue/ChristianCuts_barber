@@ -5,8 +5,8 @@ import Galerie from "../components/galerie";
 import Statistiques from "../components/statistiques";
 
 export default function page() {
-  // URL de réservation Brevo
-  const meetingUrl = "https://meet.brevo.com/christiancutz?lang=fr";
+  // URL de réservation Calendly
+  const meetingUrl = "https://calendly.com/tachristian21/60min";
 
   return (
     <div>

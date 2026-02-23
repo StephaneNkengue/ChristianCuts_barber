@@ -3,8 +3,8 @@ import ImageBackTop from "../../components/imageBackTop";
 import Image from "next/image";
 
 export default function page() {
-  // URL de réservation Brevo
-  const meetingUrl = "https://meet.brevo.com/christiancutz?lang=fr";
+  // URL de réservation Calendly
+  const meetingUrl = "https://calendly.com/tachristian21/60min";
 
   // Tableau avec les services spécifiques
   const services = [
@@ -52,6 +52,11 @@ export default function page() {
       title: "TWIST",
       image: "/galerie/gal16.jpg",
       price: "50$",
+    },
+    {
+      title: "COIFFURE & TEINTURE PERMANENTE",
+      image: "/galerie/gal23.jpg",
+      price: "70$",
     },
   ];
 

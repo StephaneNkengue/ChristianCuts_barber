@@ -9,16 +9,14 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = () => {
   const pathname = usePathname();
   const [meetingUrl, setMeetingUrl] = useState<string>(
-    "https://meet.brevo.com/christiancutz?lang=fr"
+    "https://calendly.com/tachristian21/60min"
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Récupérer l'URL de base de Brevo Meeting
-    if (process.env.NEXT_PUBLIC_BREVO_MEETING_URL) {
-      const baseUrl = process.env.NEXT_PUBLIC_BREVO_MEETING_URL;
-      // Ajouter le paramètre de langue française
-      setMeetingUrl(`${baseUrl}?lang=fr`);
+    // Récupérer l'URL de Calendly depuis la variable d'environnement si disponible
+    if (process.env.NEXT_PUBLIC_CALENDLY_URL) {
+      setMeetingUrl(process.env.NEXT_PUBLIC_CALENDLY_URL);
     }
   }, []);
 
