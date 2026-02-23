@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Loader from "./loading";
 import React from "react";
 import { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Définir les métadonnées du site, incluant la favicon
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
