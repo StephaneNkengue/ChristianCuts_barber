@@ -1,113 +1,97 @@
 import React from "react";
-import ImageBackTop from "../../components/imageBackTop";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+import ImageBackTop from "../../components/imageBackTop";
+import Breadcrumb from "../../components/breadcrumb";
+import { buildMetadata } from "@/lib/seo";
+import { BUSINESS, localityPhrase } from "@/lib/business";
+import { SERVICES } from "@/lib/services";
 
-export default function page() {
-  // URL de réservation Calendly
-  const meetingUrl = "https://calendly.com/tachristian21/60min";
+export const metadata: Metadata = buildMetadata({
+  title: `Services de barbier ${localityPhrase()}`,
+  description: `Coupe, barbe, dégradé, contours, teinture, nattes et twists ${localityPhrase()}. Découvrez les 10 prestations du salon et leurs tarifs, puis réservez en ligne.`,
+  path: "/service",
+  imageAlt: `Prestations de ${BUSINESS.name}, barbier ${localityPhrase()}`,
+});
 
-  // Tableau avec les services spécifiques
-  const services = [
-    {
-      title: "HOME SERVICE",
-      image: "/galerie/gal18.jpg",
-      price: "À partir de 150$",
-    },
-    {
-      title: "COUPE CLASSIQUE",
-      image: "/galerie/gal13.jpg",
-      price: "40$",
-    },
-    {
-      title: "COUPE & BARBE",
-      image: "/galerie/gal10.jpg",
-      price: "50$",
-    },
-    {
-      title: "COIFFURE & LAVAGE",
-      image: "/galerie/gal19.jpg",
-      price: "60$",
-    },
-    {
-      title: "CONTOUR UNIQUE",
-      image: "/galerie/gal22.jpg",
-      price: "25$",
-    },
-    {
-      title: "COIFFURE D'ANNIVERSAIRE",
-      image: "/galerie/gal12.jpg",
-      price: "Gratuit",
-    },
-    {
-      title: "TEINTURE",
-      image: "/galerie/gal1.jpg",
-      price: "COLORATION : 60$ | DECOLORATION : 100$",
-    },
-    {
-      title: "NATTES",
-      image: "/galerie/gal17.jpg",
-      price: "40$ ",
-    },
-    {
-      title: "TWIST",
-      image: "/galerie/gal16.jpg",
-      price: "50$",
-    },
-    {
-      title: "COIFFURE & TEINTURE PERMANENTE",
-      image: "/galerie/gal23.jpg",
-      price: "70$",
-    },
-  ];
-
+export default function Page() {
   return (
-    <div>
-      <ImageBackTop title="SERVICES" />
+    <>
+      <ImageBackTop
+        title={`Services de barbier ${localityPhrase()}`}
+        subtitle="Dix prestations, du contour rapide à la coloration complète. Chaque service a sa page dédiée."
+        imageAlt={`Salon de ${BUSINESS.name}, barbier ${localityPhrase()}`}
+      >
+        <Breadcrumb
+          items={[
+            { name: "Accueil", path: "/" },
+            { name: "Services", path: "/service" },
+          ]}
+        />
+      </ImageBackTop>
 
-      <div className="text-white py-16 px-6 md:px-20">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="max-w-6xl mx-auto flex flex-col md:flex-row items-center mb-20"
-          >
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 relative">
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={600}
-                height={200}
-                className="rounded-lg"
-              />
-              <div
-                className="absolute inset-0 rounded-lg"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent)",
-                }}
-              ></div>
-            </div>
+      <div className="text-white py-12 sm:py-16 px-6 md:px-20">
+        <div className="max-w-6xl mx-auto space-y-16 sm:space-y-20">
+          {SERVICES.map((service) => (
+            <article
+              key={service.slug}
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
+            >
+              <div className="w-full md:w-1/2 relative">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="rounded-lg w-full h-auto"
+                />
+                <div
+                  className="absolute inset-0 rounded-lg pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent)",
+                  }}
+                />
+              </div>
 
-            {/* Text Section */}
-            <div className="w-full md:w-3/4 md:pl-12 mt-8 md:mt-0">
-              <h2 className="text-3xl font-bold">{service.title}</h2>
-              <p className="text-orange-500 mt-4 text-4xl font-bold">
-                {service.price}
-              </p>
+              <div className="w-full md:w-1/2">
+                <h2 className="text-2xl sm:text-3xl font-bold">
+                  <Link
+                    href={`/service/${service.slug}`}
+                    className="hover:text-orange-500 transition-colors"
+                  >
+                    {service.name}
+                  </Link>
+                </h2>
+                <p className="text-orange-500 mt-3 text-2xl sm:text-3xl font-bold">
+                  {service.priceLabel}
+                </p>
+                <p className="mt-4 text-gray-300">{service.summary}</p>
 
-              <a
-                href={meetingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-6 px-4 relative border border-orange-500 text-white py-2 rounded-md overflow-hidden group"
-              >
-                <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
-                <strong className="relative z-10 text-l">Réserver</strong>
-              </a>
-            </div>
-          </div>
-        ))}
+                <div className="mt-6 flex flex-wrap items-center gap-4">
+                  <Link
+                    href={`/service/${service.slug}`}
+                    className="px-4 relative border border-orange-500 text-white py-2 rounded-md overflow-hidden group inline-block"
+                  >
+                    <span className="absolute inset-0 bg-orange-500 scale-x-0 origin-left transition-transform duration-1000 ease-in-out group-hover:scale-x-100"></span>
+                    <strong className="relative z-10">En savoir plus</strong>
+                  </Link>
+                  <a
+                    href={BUSINESS.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-md border border-white/60 hover:border-white transition-colors"
+                  >
+                    <strong>Réserver</strong>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

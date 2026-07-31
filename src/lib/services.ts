@@ -21,8 +21,14 @@ export type Service = {
   image: string;
   /** Texte alternatif de l'image : descriptif et localisé. */
   imageAlt: string;
-  /** Résumé court — sert de meta description et d'accroche. */
+  /** Accroche affichée sur le site (tuiles, listes, sous-titre de page). */
   summary: string;
+  /**
+   * Meta description de la page dédiée. Rédigée à la main pour tenir dans les
+   * 140-160 caractères affichés par Google et finir sur un appel à l'action —
+   * plutôt qu'une troncature automatique du résumé, qui coupait en plein mot.
+   */
+  metaDescription: string;
   /** Durée indicative, pour l'affichage et le JSON-LD. */
   duration: string | null;
   /** Corps de la page détaillée. */
@@ -42,6 +48,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coupe classique homme réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "La coupe homme de référence : longueur ajustée aux ciseaux et à la tondeuse, contours nets, finition adaptée à la forme du visage.",
+    metaDescription: `Coupe homme ${localityPhrase()} : longueur aux ciseaux, dégradé à la tondeuse et contours nets. 40 $ chez Christian Cutz, sur rendez-vous. Réservez en ligne.`,
     duration: "PT45M",
     sections: [
       {
@@ -77,6 +84,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coupe et taille de barbe réalisées chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe complète et taille de barbe dans le même rendez-vous : contours dessinés, longueur égalisée, ligne de barbe alignée sur la coupe.",
+    metaDescription: `Coupe et taille de barbe ${localityPhrase()} dans le même rendez-vous : contours dessinés, ligne de barbe fondue. 50 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H",
     sections: [
       {
@@ -111,6 +119,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coiffure avec lavage réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe précédée d'un shampooing complet : cheveux lavés et démêlés avant la coupe, pour une précision et une finition supérieures.",
+    metaDescription: `Shampooing complet puis coupe ${localityPhrase()} : cheveux lavés et démêlés pour une finition plus précise. 60 $ chez Christian Cutz. Réservez votre créneau.`,
     duration: "PT1H",
     sections: [
       {
@@ -139,6 +148,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Contour et soin de la barbe réalisés chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Reprise des contours seuls, sans toucher à la longueur : ligne frontale, nuque, oreilles et barbe redessinées entre deux coupes.",
+    metaDescription: `Reprise des contours entre deux coupes ${localityPhrase()} : ligne frontale, nuque, oreilles et barbe redessinées. 25 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT20M",
     sections: [
       {
@@ -173,6 +183,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coloration de cheveux réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coloration ou décoloration réalisée en salon : ton sur ton, changement de teinte ou éclaircissement, avec un rendu adapté à ta base.",
+    metaDescription: `Coloration 60 $ ou décoloration 100 $ ${localityPhrase()}, adaptées à votre base de départ. Teinture réalisée en salon chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -207,6 +218,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Nattes réalisées chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Nattes réalisées sur mesure, motif et taille au choix : une coiffure protectrice qui tient plusieurs semaines.",
+    metaDescription: `Nattes sur mesure ${localityPhrase()} : motif, épaisseur et taille au choix, pour une coiffure protectrice qui tient. 40 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -240,6 +252,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Twists réalisés chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Twists réalisés mèche par mèche, pour une texture définie et un volume naturel qui tient dans la durée.",
+    metaDescription: `Twists réalisés mèche par mèche ${localityPhrase()}, pour une texture définie et du volume naturel. 50 $ chez Christian Cutz. Réservez votre rendez-vous en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -273,6 +286,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coiffure avec teinture permanente réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe et teinture permanente dans le même rendez-vous : une couleur durable posée sur une coupe fraîchement travaillée.",
+    metaDescription: `Coupe et teinture permanente ${localityPhrase()} dans le même rendez-vous : une couleur qui tient jusqu'à la repousse. 70 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT2H",
     sections: [
       {
@@ -306,6 +320,8 @@ export const SERVICES: Service[] = [
     imageAlt: `Service de barbier à domicile proposé par Christian Cutz ${localityPhrase()}`,
     summary:
       "Le barbier se déplace chez toi avec son matériel, à Montréal et dans les environs. Idéal pour un groupe ou un emploi du temps chargé.",
+    metaDescription:
+      "Barbier à domicile à Montréal, Laval et Longueuil : le matériel complet se déplace chez vous. À partir de 150 $ chez Christian Cutz. Réservez en ligne.",
     duration: null,
     sections: [
       {
@@ -340,6 +356,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coiffure d'anniversaire offerte chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Ta coupe est offerte le jour de ton anniversaire. Une pièce d'identité suffit, sur rendez-vous comme d'habitude.",
+    metaDescription: `Votre coupe est offerte le jour de votre anniversaire chez Christian Cutz, barbier ${localityPhrase()}. Pièce d'identité demandée. Réservez votre créneau.`,
     duration: "PT45M",
     sections: [
       {
