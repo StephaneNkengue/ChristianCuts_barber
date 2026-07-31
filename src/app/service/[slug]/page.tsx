@@ -18,6 +18,14 @@ export function generateStaticParams() {
   return SERVICES.map((service) => ({ slug: service.slug }));
 }
 
+/**
+ * Le catalogue est fixe : tout slug inconnu doit renvoyer un vrai 404.
+ * Sans ce réglage, la page est rendue à la demande et le shell HTML part en
+ * 200 avant que notFound() ne soit atteint — un « soft 404 » qui laisse Google
+ * indexer n'importe quelle URL sous /service/.
+ */
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
