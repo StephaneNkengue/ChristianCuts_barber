@@ -1,135 +1,153 @@
 import React from "react";
+import Link from "next/link";
+import type { Metadata } from "next";
 import ImageBackTop from "../../components/imageBackTop";
+import Breadcrumb from "../../components/breadcrumb";
+import JsonLd from "../../components/jsonLd";
+import { faqSchema } from "@/lib/schema";
+import { FAQ_ITEMS } from "@/lib/faq";
+import { buildMetadata } from "@/lib/seo";
+import { BUSINESS, localityPhrase } from "@/lib/business";
+
+export const metadata: Metadata = buildMetadata({
+  title: `Modalités et FAQ ${localityPhrase()}`,
+  description: `Réservation, retards, annulations et suppléments chez ${BUSINESS.name}, barbier ${localityPhrase()} : toutes les réponses avant de prendre votre rendez-vous.`,
+  path: "/modalite",
+  imageAlt: `Salon de ${BUSINESS.name}, barbier ${localityPhrase()}`,
+});
+
+const POLICIES: { heading: string; items: string[] }[] = [
+  {
+    heading: "Prise de rendez-vous",
+    items: [
+      "Les réservations se font exclusivement en ligne via notre site web ou bien par appel direct.",
+    ],
+  },
+  {
+    heading: "Retards",
+    items: [
+      "Un retard de plus de 10-15 minutes peut entraîner l'annulation du rendez-vous.",
+      "Si le retard est acceptable, la coupe sera adaptée au temps restant.",
+    ],
+  },
+  {
+    heading: "Annulations et modifications",
+    items: [
+      "Les annulations doivent être faites au moins 24h à l'avance pour obtenir un remboursement de l'acompte (si applicable).",
+    ],
+  },
+  {
+    heading: "Absences (no-show)",
+    items: [
+      "Une absence sans préavis entraîne la perte de l'acompte et peut bloquer les futures réservations.",
+      "Après deux absences non justifiées, une réservation ne pourra se faire que sur paiement complet à l'avance.",
+    ],
+  },
+  {
+    heading: "Hygiène et respect",
+    items: [
+      "Merci d'arriver avec des cheveux propres pour garantir une coupe optimale.",
+      "Toute attitude irrespectueuse envers le personnel ou les autres clients entraînera un refus de service.",
+    ],
+  },
+  {
+    heading: "Cas de force majeure",
+    items: [
+      "Si nous devons annuler un rendez-vous pour une raison exceptionnelle, un report ou un remboursement sera proposé.",
+    ],
+  },
+  {
+    heading: "Service express (+20 $)",
+    items: [
+      "Besoin d'une coupe rapide ? Optez pour le service express pour être pris en charge en priorité.",
+      "Disponible uniquement sur certains créneaux et sous réserve de disponibilité.",
+    ],
+  },
+  {
+    heading: "Service après l'heure de fermeture (+25 $)",
+    items: [
+      "Pour ceux qui ne peuvent pas venir pendant les horaires habituels, nous proposons des coupes après la fermeture.",
+      "Réservation obligatoire avec un supplément.",
+    ],
+  },
+];
 
 export default function Page() {
   return (
-    <div>
-      <ImageBackTop title="MODALITÉS" />
+    <>
+      <JsonLd data={faqSchema(FAQ_ITEMS)} />
 
-      <div className="text-white py-16 px-6 md:px-20 max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-8 text-center">
-          Modalités de Réservation
-        </h2>
+      <ImageBackTop
+        title={`Modalités de réservation — barbier ${localityPhrase()}`}
+        subtitle="Les règles du salon, puis les questions qui reviennent le plus souvent."
+        imageAlt={`Salon de ${BUSINESS.name}, barbier ${localityPhrase()}`}
+      >
+        <Breadcrumb
+          items={[
+            { name: "Accueil", path: "/" },
+            { name: "Modalités", path: "/modalite" },
+          ]}
+        />
+      </ImageBackTop>
 
-        {/* Prise de Rendez-vous */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Prise de Rendez-vous
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Les réservations se font exclusivement en ligne via notre site web
-              ou bien par appel direct
-            </li>
-          </ul>
-        </div>
+      <div className="text-white py-12 sm:py-16 px-6 md:px-20 max-w-4xl mx-auto">
+        <section>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+            Conditions de réservation
+          </h2>
 
-        {/* Retards */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">Retards</h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Un retard de plus de 10-15 minutes peut entraîner
-              l&apos;annulation du rendez-vous.
-            </li>
-            <li>
-              Si le retard est acceptable, la coupe sera adaptée au temps
-              restant.
-            </li>
-          </ul>
-        </div>
+          <div className="space-y-10">
+            {POLICIES.map((policy) => (
+              <div key={policy.heading}>
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 text-orange-500">
+                  {policy.heading}
+                </h3>
+                <ul className="list-disc pl-5 space-y-2 text-gray-300">
+                  {policy.items.map((item) => (
+                    <li key={item.slice(0, 40)}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
 
-        {/* Annulations & Modifications */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Annulations & Modifications
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Les annulations doivent être faites au moins 24h à l&apos;avance
-              pour obtenir un remboursement de l&apos;acompte (si applicable).
-            </li>
-          </ul>
-        </div>
+        {/* Section questions : c'est elle qui porte le FAQPage JSON-LD, et qui
+            peut faire apparaître le site en résultat enrichi. */}
+        <section className="mt-16 border-t border-white/10 pt-10">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8">
+            Questions fréquentes
+          </h2>
 
-        {/* Absences (No-Show) */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Absences (No-Show)
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Une absence sans préavis entraîne la perte de l&apos;acompte et
-              peut bloquer les futures réservations.
-            </li>
-            <li>
-              Après deux absences non justifiées, une réservation ne pourra se
-              faire que sur paiement complet à l&apos;avance.
-            </li>
-          </ul>
-        </div>
+          <dl className="space-y-8">
+            {FAQ_ITEMS.map((item) => (
+              <div key={item.question}>
+                {/* Pas de <h3> ici : le modèle de contenu de <dt> interdit les
+                    éléments de titre. Le <dt> joue déjà ce rôle sémantique. */}
+                <dt className="text-xl font-bold text-orange-500">
+                  {item.question}
+                </dt>
+                <dd className="mt-2 text-gray-300">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
 
-        {/* Hygiène & Respect */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Hygiène & Respect
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Merci d&apos;arriver avec des cheveux propres pour garantir une
-              coupe optimale.
-            </li>
-            <li>
-              Toute attitude irrespectueuse envers le personnel ou les autres
-              clients entraînera un refus de service.
-            </li>
-          </ul>
-        </div>
-
-        {/* Cas de Force Majeure */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Cas de Force Majeure
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Si nous devons annuler un rendez-vous pour une raison
-              exceptionnelle, un report ou un remboursement sera proposé.
-            </li>
-          </ul>
-        </div>
-
-        {/* Service Express */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Service Express (+20$)
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Besoin d&apos;une coupe rapide ? Optez pour le service express
-              pour être pris en charge en priorité.
-            </li>
-            <li>
-              Disponible uniquement sur certains créneaux et sous réserve de
-              disponibilité.
-            </li>
-          </ul>
-        </div>
-
-        {/* Service Après Heure de Fermeture */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-4 text-orange-500">
-            Service Après Heure de Fermeture (+25$)
-          </h3>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              Pour ceux qui ne peuvent pas venir pendant les horaires habituels,
-              nous proposons des coupes après la fermeture.
-            </li>
-            <li>Réservation obligatoire avec un supplément.</li>
-          </ul>
-        </div>
+          <p className="mt-10 text-gray-300">
+            Une question qui n&apos;est pas dans la liste ? Appelle le{" "}
+            <a
+              href={`tel:${BUSINESS.phone}`}
+              className="text-orange-500 hover:underline"
+            >
+              {BUSINESS.phoneDisplay}
+            </a>{" "}
+            ou passe par la{" "}
+            <Link href="/contact" className="text-orange-500 hover:underline">
+              page contact
+            </Link>
+            .
+          </p>
+        </section>
       </div>
-    </div>
+    </>
   );
 }
