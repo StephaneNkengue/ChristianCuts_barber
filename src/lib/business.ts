@@ -85,7 +85,38 @@ export const DAY_ORDER: DayKey[] = [
   "sunday",
 ];
 
-export const BUSINESS = {
+export type Business = {
+  name: string;
+  legalName: string;
+  foundingYear: number;
+  siteUrl: string;
+  phone: string;
+  phoneDisplay: string;
+  email: string;
+  address: {
+    street: string;
+    city: string;
+    region: string;
+    regionName: string;
+    postalCode: string | null;
+    country: string;
+  };
+  neighbourhood: string | null;
+  geo: { latitude: number; longitude: number } | null;
+  openingHours: OpeningHours | null;
+  priceRange: string;
+  currency: string;
+  bookingUrl: string;
+  mapUrl: string;
+  social: { instagram: string; facebook: string | null };
+  areaServed: string[];
+  language: string;
+};
+
+// Le type est déclaré explicitement — sans lui, TypeScript rétrécit les champs
+// encore vides au type `null` et considère comme mort tout le code qui les
+// affichera une fois renseignés.
+export const BUSINESS: Business = {
   /** Nom exact. Doit être identique au caractère près sur la fiche Google. */
   name: "Christian Cutz",
   legalName: "Christian Cutz",
@@ -130,7 +161,7 @@ export const BUSINESS = {
   areaServed: ["Montréal", "Laval", "Longueuil"],
 
   language: "fr-CA",
-} as const;
+};
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers d'affichage — garantissent un NAP identique partout
@@ -172,7 +203,13 @@ export function formatOpeningHours():
   });
 }
 
-/** URL absolue à partir d'un chemin interne, pour les canonical et le JSON-LD. */
+/**
+ * URL absolue à partir d'un chemin interne, pour les canonical, le sitemap et
+ * le JSON-LD. Le slash final est retiré : Next normalise déjà les canonical
+ * sans slash, et une URL déclarée dans le sitemap qui ne correspond pas au
+ * canonical de la page envoie un signal contradictoire à Google.
+ */
 export function absoluteUrl(path = "/"): string {
-  return new URL(path, BUSINESS.siteUrl).toString();
+  const url = new URL(path, BUSINESS.siteUrl).toString();
+  return url.length > 1 && url.endsWith("/") ? url.slice(0, -1) : url;
 }

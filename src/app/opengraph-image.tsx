@@ -76,19 +76,23 @@ export default async function OpengraphImage() {
             color: "#ffffff",
           }}
         >
+          {/* Satori impose un display explicite dès qu'un élément a plusieurs
+              enfants : chaque bloc de texte tient donc en une seule chaîne. */}
           <div
             style={{
+              display: "flex",
               fontSize: 30,
               letterSpacing: 8,
               textTransform: "uppercase",
               color: "#f97316",
             }}
           >
-            Barbier {localityPhrase()}
+            {`Barbier ${localityPhrase()}`}
           </div>
 
           <div
             style={{
+              display: "flex",
               fontSize: 116,
               fontWeight: 800,
               lineHeight: 1.05,
@@ -100,6 +104,7 @@ export default async function OpengraphImage() {
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: 116,
               fontWeight: 800,
               lineHeight: 1.05,
@@ -129,7 +134,7 @@ export default async function OpengraphImage() {
               color: "#a3a3a3",
             }}
           >
-            {formatAddress()} · {BUSINESS.phoneDisplay}
+            {`${formatAddress()} · ${BUSINESS.phoneDisplay}`}
           </div>
         </div>
       </div>
