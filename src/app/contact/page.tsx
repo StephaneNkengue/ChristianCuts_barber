@@ -23,13 +23,19 @@ export const metadata: Metadata = buildMetadata({
 });
 
 /**
- * Carte Google intégrée sans clé d'API. L'adresse reste écrite en texte HTML
- * juste au-dessus : une adresse lisible uniquement dans une carte embarquée ou
- * dans une image n'est pas exploitable par les robots.
+ * Carte Google intégrée sans clé d'API. Ancrée sur les coordonnées exactes
+ * quand elles sont connues — une recherche textuelle peut géocoder de travers
+ * si le commerce n'est pas encore listé — et sur l'adresse sinon.
+ *
+ * L'adresse reste écrite en texte HTML juste au-dessus : une adresse lisible
+ * uniquement dans une carte embarquée ou dans une image n'est pas exploitable
+ * par les robots.
  */
-const mapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(
-  `${BUSINESS.name}, ${formatAddress()}`
-)}&output=embed`;
+const mapEmbedUrl = BUSINESS.geo
+  ? `https://www.google.com/maps?q=${BUSINESS.geo.latitude},${BUSINESS.geo.longitude}&z=17&output=embed`
+  : `https://www.google.com/maps?q=${encodeURIComponent(
+      `${BUSINESS.name}, ${formatAddress()}`
+    )}&output=embed`;
 
 export default function Page() {
   const hours = formatOpeningHours();

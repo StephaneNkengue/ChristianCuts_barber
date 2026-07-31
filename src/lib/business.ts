@@ -14,9 +14,11 @@
  * └─────────────────────────────────────────────────────────────────────────┘
  */
 
-/** Coordonnées GPS réelles du salon. À relever sur Google Maps : clic droit
- *  sur le point exact → les deux nombres affichés en haut du menu. */
-export const GEO: { latitude: number; longitude: number } | null = null;
+/** Coordonnées GPS réelles du salon, relevées sur Google Maps. */
+export const GEO: { latitude: number; longitude: number } | null = {
+  latitude: 45.544899191498786,
+  longitude: -73.55750956824136,
+};
 
 /** Code postal, format « H1H 1H1 ». */
 export const POSTAL_CODE: string | null = "H1W 2V5";
