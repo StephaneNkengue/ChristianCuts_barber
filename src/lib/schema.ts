@@ -128,12 +128,24 @@ export function hairSalonSchema(): Json {
         }
       : null,
     hasMap: BUSINESS.mapUrl,
+    containedInPlace: BUSINESS.neighbourhood
+      ? {
+          "@type": "Place",
+          name: `${BUSINESS.neighbourhood}, ${BUSINESS.address.city}`,
+        }
+      : null,
+    // Absent tant que le salon n'a pas de plages fixes : il fonctionne sur
+    // rendez-vous, les disponibilités vivent dans l'outil de réservation.
     openingHoursSpecification: openingHoursSpecification(),
+    publicAccess: true,
     sameAs: sameAs(),
-    areaServed: BUSINESS.areaServed.map((city) => ({
-      "@type": "City",
-      name: city,
-    })),
+    areaServed: [
+      ...BUSINESS.areaServed.map((city) => ({ "@type": "City", name: city })),
+      ...BUSINESS.nearbyAreas.map((area) => ({
+        "@type": "AdministrativeArea",
+        name: area,
+      })),
+    ],
     knowsLanguage: ["fr-CA"],
     potentialAction: {
       "@type": "ReserveAction",

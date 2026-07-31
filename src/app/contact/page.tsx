@@ -100,7 +100,8 @@ export default function Page() {
 
             <section>
               <h3 className="text-xl font-bold flex items-center gap-3">
-                <CiClock2 aria-hidden="true" /> Heures d&apos;ouverture
+                <CiClock2 aria-hidden="true" />{" "}
+                {hours ? "Heures d'ouverture" : "Disponibilités"}
               </h3>
               {hours ? (
                 <ul className="mt-3 space-y-1 text-gray-300">
@@ -113,15 +114,24 @@ export default function Page() {
                 </ul>
               ) : (
                 <p className="mt-3 text-gray-300">
-                  Les rendez-vous se prennent en ligne ou par téléphone :
-                  appelez le{" "}
+                  Le salon fonctionne uniquement sur rendez-vous. Les créneaux
+                  libres s&apos;affichent en temps réel sur la{" "}
+                  <a
+                    href={BUSINESS.bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-500 hover:underline"
+                  >
+                    page de réservation en ligne
+                  </a>
+                  , ou appelez le{" "}
                   <a
                     href={`tel:${BUSINESS.phone}`}
                     className="text-orange-500 hover:underline"
                   >
                     {BUSINESS.phoneDisplay}
-                  </a>{" "}
-                  pour connaître les disponibilités.
+                  </a>
+                  .
                 </p>
               )}
             </section>

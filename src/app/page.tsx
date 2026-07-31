@@ -13,7 +13,7 @@ import { BUSINESS, formatAddress, localityPhrase } from "@/lib/business";
 export const metadata: Metadata = {
   ...buildMetadata({
     title: `Barbier ${localityPhrase()}`,
-    description: `Coupe homme, taille de barbe, dégradé et teinture ${localityPhrase()}. Barbier sur rendez-vous depuis 2022 — réservez votre créneau en ligne en moins d'une minute.`,
+    description: `Coupe homme, taille de barbe, dégradé et teinture ${localityPhrase()}. Barbier sur rendez-vous depuis 2022 — réservez votre créneau en ligne.`,
     path: "/",
     imageAlt: `Salon de ${BUSINESS.name}, barbier ${localityPhrase()}`,
   }),
@@ -101,11 +101,14 @@ export default function Page() {
             <strong className="text-white">{formatAddress()}</strong>, depuis{" "}
             {BUSINESS.foundingYear}. Coupe classique, coupe et barbe, contours,
             teinture, nattes ou twists : chaque prestation est adaptée à ta
-            texture de cheveux et à la forme de ton visage, sur rendez-vous.
+            texture de cheveux et à la forme de ton visage, uniquement sur
+            rendez-vous : les créneaux libres s&apos;affichent en temps réel à
+            la réservation.
           </p>
           <p className="text-gray-300 text-base sm:text-lg">
-            Le salon dessert {BUSINESS.areaServed.join(", ")}, et propose aussi
-            un{" "}
+            Le salon dessert {BUSINESS.areaServed.join(", ")} ainsi que les
+            secteurs voisins de {BUSINESS.nearbyAreas.join(" et ")}, et propose
+            aussi un{" "}
             <Link
               href="/service/home-service"
               className="text-orange-500 hover:underline"

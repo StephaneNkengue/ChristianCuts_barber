@@ -11,7 +11,7 @@ import { SALON_ID } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
   title: `Tarifs barbier ${localityPhrase()}`,
-  description: `Prix du salon ${BUSINESS.name} ${localityPhrase()} : coupe 40 $, coupe et barbe 50 $, contours 25 $, teinture, nattes et twists. Réservez votre rendez-vous en ligne.`,
+  description: `Prix du salon ${BUSINESS.name} ${localityPhrase()} : coupe 40 $, coupe et barbe 50 $, contours 25 $, teinture, nattes et twists. Réservez en ligne.`,
   path: "/tarifs",
   imageAlt: `Tarifs de ${BUSINESS.name}, barbier ${localityPhrase()}`,
 });

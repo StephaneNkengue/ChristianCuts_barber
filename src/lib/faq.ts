@@ -11,8 +11,15 @@ export const FAQ_ITEMS: { question: string; answer: string }[] = [
     answer: `Les réservations se font en ligne depuis le site, ou par appel direct au ${BUSINESS.phoneDisplay}. Le salon fonctionne uniquement sur rendez-vous.`,
   },
   {
+    question: "Quelles sont les heures d'ouverture ?",
+    answer:
+      "Le salon fonctionne uniquement sur rendez-vous, sans plages d'ouverture fixes. Les créneaux disponibles s'affichent en temps réel sur la page de réservation en ligne, et peuvent aussi être confirmés par téléphone.",
+  },
+  {
     question: `Où se trouve le salon ${BUSINESS.name} ?`,
-    answer: `Le salon est situé au ${formatAddress()}. Il dessert ${BUSINESS.areaServed.join(
+    answer: `Le salon est situé au ${formatAddress()}, dans le quartier ${
+      BUSINESS.neighbourhood ?? BUSINESS.address.city
+    }. Il dessert ${BUSINESS.areaServed.join(", ")} et les secteurs voisins : ${BUSINESS.nearbyAreas.join(
       ", "
     )}.`,
   },

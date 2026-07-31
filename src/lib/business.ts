@@ -19,19 +19,33 @@
 export const GEO: { latitude: number; longitude: number } | null = null;
 
 /** Code postal, format « H1H 1H1 ». */
-export const POSTAL_CODE: string | null = null;
+export const POSTAL_CODE: string | null = "H1W 2V5";
 
-/** Quartier ou arrondissement, tel qu'un client le taperait dans Google
- *  (« Rosemont », « Villeray », « Le Plateau-Mont-Royal »…).
- *  C'est le mot-clé le plus important du référencement local : tant qu'il
- *  vaut `null`, le site se rabat sur « Montréal » partout. */
-export const NEIGHBOURHOOD: string | null = null;
+/** Quartier, tel qu'un client le taperait dans Google. Sans « Montréal » :
+ *  les helpers d'affichage ajoutent déjà la ville derrière. */
+export const NEIGHBOURHOOD: string | null = "Préfontaine";
 
-/** Horaires réels. `null` = jour fermé. Format 24 h « HH:MM ».
- *  Mettre l'objet entier à `null` si les horaires ne sont pas encore connus :
- *  des horaires faux dans le JSON-LD s'affichent dans Google et font
- *  déplacer des clients pour rien. */
+/**
+ * Le salon fonctionne uniquement sur rendez-vous, les disponibilités réelles
+ * vivent dans Calendly. Il n'y a donc pas d'horaires fixes à déclarer, et ce
+ * champ reste volontairement `null` : `openingHoursSpecification` est alors
+ * absent du JSON-LD, ce qui vaut mieux que des horaires inventés que Google
+ * afficherait et sur lesquels des clients se déplaceraient pour rien.
+ *
+ * Conséquence assumée : Google n'affichera pas de mention « Ouvert / Ferme à
+ * 19 h ». Pour l'obtenir, il faudrait des plages d'ouverture stables.
+ */
 export const OPENING_HOURS: OpeningHours | null = null;
+
+/**
+ * Secteurs voisins déduits du code postal H1W, qui couvre
+ * Mercier–Hochelaga-Maisonneuve. Ils enrichissent le JSON-LD et le contenu
+ * local sans toucher au NAP. À retirer si le rayonnement réel diffère.
+ */
+export const NEARBY_AREAS: string[] = [
+  "Hochelaga-Maisonneuve",
+  "Mercier–Hochelaga-Maisonneuve",
+];
 
 /** Page Facebook, si elle existe. */
 export const FACEBOOK_URL: string | null = null;
@@ -110,6 +124,7 @@ export type Business = {
   mapUrl: string;
   social: { instagram: string; facebook: string | null };
   areaServed: string[];
+  nearbyAreas: string[];
   language: string;
 };
 
@@ -157,8 +172,11 @@ export const BUSINESS: Business = {
     facebook: FACEBOOK_URL,
   },
 
-  /** Villes et secteurs desservis, pour areaServed. */
+  /** Villes desservies, pour areaServed. */
   areaServed: ["Montréal", "Laval", "Longueuil"],
+
+  /** Quartiers voisins, pour le contenu local et containedInPlace. */
+  nearbyAreas: NEARBY_AREAS,
 
   language: "fr-CA",
 };

@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
 
   return buildMetadata({
-    title: `${service.name} ${localityPhrase()}`,
+    title: `${service.titleName ?? service.name} ${localityPhrase()}`,
     description: service.metaDescription,
     path: `/service/${service.slug}`,
     image: service.image,

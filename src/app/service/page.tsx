@@ -10,7 +10,7 @@ import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = buildMetadata({
   title: `Services de barbier ${localityPhrase()}`,
-  description: `Coupe, barbe, dégradé, contours, teinture, nattes et twists ${localityPhrase()}. Découvrez les 10 prestations du salon et leurs tarifs, puis réservez en ligne.`,
+  description: `Coupe, barbe, dégradé, contours, teinture, nattes et twists ${localityPhrase()}. Les 10 prestations du salon et leurs tarifs, puis réservez en ligne.`,
   path: "/service",
   imageAlt: `Prestations de ${BUSINESS.name}, barbier ${localityPhrase()}`,
 });

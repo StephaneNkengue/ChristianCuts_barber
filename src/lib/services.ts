@@ -16,6 +16,12 @@ export type Service = {
   name: string;
   /** Nom tel qu'affiché en majuscules sur la page /service d'origine. */
   displayName: string;
+  /**
+   * Nom raccourci pour la balise <title> uniquement. À renseigner quand
+   * `name` + le quartier + le nom du salon dépasseraient les ~60 caractères
+   * affichés par Google.
+   */
+  titleName?: string;
   priceLabel: string;
   priceValue: number | null;
   image: string;
@@ -48,7 +54,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coupe classique homme réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "La coupe homme de référence : longueur ajustée aux ciseaux et à la tondeuse, contours nets, finition adaptée à la forme du visage.",
-    metaDescription: `Coupe homme ${localityPhrase()} : longueur aux ciseaux, dégradé à la tondeuse et contours nets. 40 $ chez Christian Cutz, sur rendez-vous. Réservez en ligne.`,
+    metaDescription: `Coupe homme ${localityPhrase()} : longueur aux ciseaux, dégradé à la tondeuse et contours nets. 40 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT45M",
     sections: [
       {
@@ -84,7 +90,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coupe et taille de barbe réalisées chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe complète et taille de barbe dans le même rendez-vous : contours dessinés, longueur égalisée, ligne de barbe alignée sur la coupe.",
-    metaDescription: `Coupe et taille de barbe ${localityPhrase()} dans le même rendez-vous : contours dessinés, ligne de barbe fondue. 50 $ chez Christian Cutz. Réservez en ligne.`,
+    metaDescription: `Coupe et taille de barbe ${localityPhrase()} : contours dessinés, longueur égalisée, ligne de barbe fondue. 50 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H",
     sections: [
       {
@@ -119,7 +125,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coiffure avec lavage réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe précédée d'un shampooing complet : cheveux lavés et démêlés avant la coupe, pour une précision et une finition supérieures.",
-    metaDescription: `Shampooing complet puis coupe ${localityPhrase()} : cheveux lavés et démêlés pour une finition plus précise. 60 $ chez Christian Cutz. Réservez votre créneau.`,
+    metaDescription: `Shampooing complet puis coupe ${localityPhrase()} : cheveux lavés et démêlés pour une finition plus précise. 60 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H",
     sections: [
       {
@@ -148,7 +154,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Contour et soin de la barbe réalisés chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Reprise des contours seuls, sans toucher à la longueur : ligne frontale, nuque, oreilles et barbe redessinées entre deux coupes.",
-    metaDescription: `Reprise des contours entre deux coupes ${localityPhrase()} : ligne frontale, nuque, oreilles et barbe redessinées. 25 $ chez Christian Cutz. Réservez en ligne.`,
+    metaDescription: `Reprise des contours ${localityPhrase()} : ligne frontale, nuque, oreilles et barbe redessinées. 25 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT20M",
     sections: [
       {
@@ -183,7 +189,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Coloration de cheveux réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coloration ou décoloration réalisée en salon : ton sur ton, changement de teinte ou éclaircissement, avec un rendu adapté à ta base.",
-    metaDescription: `Coloration 60 $ ou décoloration 100 $ ${localityPhrase()}, adaptées à votre base de départ. Teinture réalisée en salon chez Christian Cutz. Réservez en ligne.`,
+    metaDescription: `Coloration 60 $ ou décoloration 100 $ ${localityPhrase()}, adaptées à votre base de départ. En salon chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -218,7 +224,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Nattes réalisées chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Nattes réalisées sur mesure, motif et taille au choix : une coiffure protectrice qui tient plusieurs semaines.",
-    metaDescription: `Nattes sur mesure ${localityPhrase()} : motif, épaisseur et taille au choix, pour une coiffure protectrice qui tient. 40 $ chez Christian Cutz. Réservez en ligne.`,
+    metaDescription: `Nattes sur mesure ${localityPhrase()} : motif, épaisseur et taille au choix, coiffure protectrice qui tient. 40 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -252,7 +258,7 @@ export const SERVICES: Service[] = [
     imageAlt: `Twists réalisés chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Twists réalisés mèche par mèche, pour une texture définie et un volume naturel qui tient dans la durée.",
-    metaDescription: `Twists réalisés mèche par mèche ${localityPhrase()}, pour une texture définie et du volume naturel. 50 $ chez Christian Cutz. Réservez votre rendez-vous en ligne.`,
+    metaDescription: `Twists réalisés mèche par mèche ${localityPhrase()}, pour une texture définie et du volume naturel. 50 $ chez Christian Cutz. Réservez en ligne.`,
     duration: "PT1H30M",
     sections: [
       {
@@ -280,13 +286,14 @@ export const SERVICES: Service[] = [
     slug: "coiffure-et-teinture-permanente",
     name: "Coiffure et teinture permanente",
     displayName: "COIFFURE & TEINTURE PERMANENTE",
+    titleName: "Teinture permanente",
     priceLabel: "70 $",
     priceValue: 70,
     image: "/galerie/gal23.jpg",
     imageAlt: `Coiffure avec teinture permanente réalisée chez Christian Cutz, barbier ${localityPhrase()}`,
     summary:
       "Coupe et teinture permanente dans le même rendez-vous : une couleur durable posée sur une coupe fraîchement travaillée.",
-    metaDescription: `Coupe et teinture permanente ${localityPhrase()} dans le même rendez-vous : une couleur qui tient jusqu'à la repousse. 70 $ chez Christian Cutz. Réservez en ligne.`,
+    metaDescription: `Coupe et teinture permanente ${localityPhrase()} : une couleur qui tient jusqu'à la repousse. 70 $ chez Christian Cutz. Réservez votre rendez-vous en ligne.`,
     duration: "PT2H",
     sections: [
       {
@@ -350,6 +357,7 @@ export const SERVICES: Service[] = [
     slug: "coiffure-anniversaire",
     name: "Coiffure d'anniversaire",
     displayName: "COIFFURE D'ANNIVERSAIRE",
+    titleName: "Coupe anniversaire",
     priceLabel: "Gratuit",
     priceValue: 0,
     image: "/galerie/gal12.jpg",
