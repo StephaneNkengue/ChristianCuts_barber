@@ -2,6 +2,7 @@ import "./globals.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Loader from "./loading";
+import MobileActionBar from "../components/mobileActionBar";
 import React from "react";
 import { Metadata } from "next";
 import { Exo_2 } from "next/font/google";
@@ -68,13 +69,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr-CA" className={`${exo2.variable} scroll-smooth`}>
-      <body className="scrollbar-hide overflow-x-hidden min-w-[320px]">
+      {/* pb-14 sur mobile : réserve la place de la barre d'action fixe pour
+          qu'elle ne recouvre pas la fin du footer. */}
+      <body className="scrollbar-hide overflow-x-hidden min-w-[320px] pb-14 md:pb-0">
         <Header />
         <Loader />
         <main className="transition-all duration-500 ease-in-out w-full">
           {children}
         </main>
         <Footer />
+        <MobileActionBar />
         <SpeedInsights />
       </body>
     </html>
